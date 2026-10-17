@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171513">
+<meta name="description" content="Discover beautiful hairstyles and enquire about appointments at Azande Hair & Beauty in Sandton, Johannesburg.">
+<title>Azande Hair & Beauty | Sandton</title>
+
+<style>
+:root {
+  --black: #171513;
+  --gold: #c7a66a;
+  --cream: #f7f3ed;
+  --white: #fffdf9;
+  --muted: #77716b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--black);
+  background: var(--white);
+  font-family: Arial, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+.top {
+  background: var(--black);
+  color: var(--gold);
+  text-align: center;
+  padding: 11px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 6%;
+  background: var(--white);
+  border-bottom: 1px solid #eee5d8;
+  gap: 15px;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+.logo small {
+  display: block;
+  text-align: center;
+  font: 9px Arial, sans-serif;
+  letter-spacing: 4px;
+  margin-top: 5px;
+}
+nav { display: flex; gap: 20px; font-size: 13px; }
+.button {
+  display: inline-block;
+  background: var(--black);
+  color: white;
+  padding: 15px 21px;
+  border: 1px solid var(--black);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.button:hover { background: var(--gold); color: var(--black); }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 540px;
+  background: var(--cream);
+}
+.hero-copy {
+  padding: 75px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.eyebrow {
+  color: #927144;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+h1, h2, h3 { font-family: Georgia, serif; font-weight: normal; }
+h1 {
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1;
+  margin: 25px 0;
+}
+h1 em { color: #a57d48; }
+.hero p, .section-intro, .about p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+.hero-image {
+  min-height: 420px;
+  background: url("https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85") center/cover;
+}
+.trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 24px 12px;
+  border-bottom: 1px solid #eee5d8;
+  color: #655b4d;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.trust span::before { content: "✦ "; color: var(--gold); }
+section.content { padding: 80px 7%; }
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+h2 { font-size: clamp(35px, 5vw, 52px); margin: 16px 0; }
+.section-intro { max-width: 600px; margin: auto; }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1100px;
+  margin: auto;
+}
+.service {
+  border: 1px solid #e8e0d5;
+  padding: 30px;
+  background: white;
+}
+.number { color: var(--gold); font: 30px Georgia, serif; }
+.service h3 { font-size: 25px; }
+.service p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+.gallery { background: var(--cream); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+.gallery-grid figure { margin: 0; background: white; }
+.gallery-grid figcaption {
+  padding: 15px;
+  font: 18px Georgia, serif;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.about img { width: 100%; max-height: 480px; object-fit: cover; }
+.booking {
+  background: var(--black);
+  color: white;
+  text-align: center;
+  padding: 80px 7%;
+}
+.booking p {
+  max-width: 520px;
+  margin: 20px auto 30px;
+  line-height: 1.8;
+  color: #ccc4ba;
+  font-size: 14px;
+}
+.booking .button { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.location {
+  padding: 60px 8%;
+  background: var(--cream);
+  text-align: center;
+}
+.location p { color: var(--muted); line-height: 1.8; }
+footer {
+  background: var(--black);
+  color: #d5cbbd;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 11px;
+  line-height: 2;
+}
+.floating {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 5;
+  background: #167847;
+  color: white;
+  padding: 15px 19px;
+  border-radius: 35px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 4px 18px #0002;
+}
+.demo {
+  position: fixed;
+  left: 8px;
+  bottom: 8px;
+  font-size: 9px;
+  background: #fff1cf;
+  color: #634718;
+  padding: 7px;
+  z-index: 6;
+}
+@media (max-width: 760px) {
+  header { padding: 16px 5%; }
+  .logo { font-size: 19px; }
+  nav { display: none; }
+  header .button { padding: 12px; font-size: 10px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-image { min-height: 330px; grid-row: 1; }
+  .hero-copy { padding: 45px 8%; }
+  h1 { font-size: 54px; }
+  section.content { padding: 60px 6%; }
+  .services { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery-grid img { height: 240px; }
+  .gallery-grid figure:last-child { display: none; }
+  .about { grid-template-columns: 1fr; gap: 25px; }
+  .about img { max-height: 350px; }
+  .trust { gap: 12px; font-size: 9px; }
+}
+</style>
+</head>
+
+<body>
+<div class="top">SANDTON, JOHANNESBURG · YOUR HAIR, YOUR CROWN</div>
+
+<header>
+  <a class="logo" href="#home">AZANDE<small>HAIR & BEAUTY</small></a>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#location">Location</a>
+  </nav>
+  <a class="button" href="https://wa.me/27781636600?text=Hi%20Azande%20Hair%20%26%20Beauty%2C%20I%27d%20like%20to%20enquire%20about%20booking." target="_blank" rel="noopener">Book Now ↗</a>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">The beauty experience</span>
+      <h1>Beauty in every <em>detail.</em></h1>
+      <p>Discover your next signature look with Azande Hair & Beauty. Explore hair inspiration and enquire about your next appointment in Sandton, Johannesburg.</p>
+      <a class="button" href="https://wa.me/27781636600?text=Hi%20Azande%20Hair%20%26%20Beauty%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
+    </div>
+    <div class="hero-image" role="img" aria-label="Hair styling inspiration"></div>
+  </section>
+
+  <div class="trust">
+    <span>Style inspiration</span>
+    <span>Personalised service</span>
+    <span>Sandton, Johannesburg</span>
+  </div>
+
+  <section class="content" id="services">
+    <div class="section-heading">
+      <span class="eyebrow">The salon menu</span>
+      <h2>Your next look starts here.</h2>
+      <p class="section-intro">Explore ideas for your next hairstyle. Contact the salon to confirm available services, pricing and appointment times.</p>
+    </div>
+    <div class="services">
+      <article class="service">
+        <span class="number">01</span>
+        <h3>Braids & Cornrows</h3>
+        <p>Discover detailed braided styles, classic cornrows and beautiful protective looks.</p>
+      </article>
+      <article class="service">
+        <span class="number">02</span>
+        <h3>Weaves & Installs</h3>
+        <p>Bring your inspiration and enquire about options for your desired look.</p>
+      </article>
+      <article class="service">
+        <span class="number">03</span>
+        <h3>Natural Hair Styling</h3>
+        <p>Explore polished, playful and protective styles for your personal look.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="content gallery" id="gallery">
+    <div class="section-heading">
+      <span class="eyebrow">The style edit</span>
+      <h2>Find your hair inspiration.</h2>
+      <p class="section-intro">A preview of the looks that could feature in the salon gallery. These sample images should be replaced with the salon's approved photos before launch.</p>
+    </div>
+    <div class="gallery-grid">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Hair and beauty inspiration" loading="lazy">
+        <figcaption>Everyday elegance</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=80" alt="Hairstyle inspiration" loading="lazy">
+        <figcaption>Statement style</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Salon styling inspiration" loading="lazy">
+        <figcaption>Beauty in detail</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="content about" id="about">
+    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=80" alt="Hair salon inspiration" loading="lazy">
+    <div>
+      <span class="eyebrow">A little about us</span>
+      <h2>Your beauty, your way.</h2>
+      <p>Based in Sandton Valley Crescent, Johannesburg, Azande Hair & Beauty brings hair inspiration and appointment enquiries together in one simple place.</p>
+      <p>Visit the TikTok page to explore more styles, then contact the salon to discuss your preferred look.</p>
+      <a class="button" href="https://www.tiktok.com/@azandem_ii" target="_blank" rel="noopener">Explore TikTok ↗</a>
+    </div>
+  </section>
+
+  <section class="booking">
+    <span class="eyebrow">Your next appointment</span>
+    <h2>Ready for your next look?</h2>
+    <p>Message the salon to ask about available appointments, pricing and the hairstyle you have in mind.</p>
+    <a class="button" href="https://wa.me/27781636600?text=Hi%20Azande%20Hair%20%26%20Beauty%2C%20I%27d%20like%20to%20enquire%20about%20a%20hairstyle." target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+  </section>
+
+  <section class="location" id="location">
+    <span class="eyebrow">Visit the salon</span>
+    <h2>Find us in Sandton.</h2>
+    <p>2 Sandown Valley Crescent, Sandton, Johannesburg</p>
+    <p>WhatsApp / Call: 078 163 6600</p>
+    <a class="button" href="https://www.google.com/maps/search/?api=1&query=2+Sandown+Valley+Crescent+Sandton+Johannesburg" target="_blank" rel="noopener">Get Directions ↗</a>
+  </section>
+</main>
+
+<footer>
+  <div class="logo">AZANDE<small>HAIR & BEAUTY</small></div>
+  <p>Independent website concept prepared for review. Not the official salon website.</p>
+  <p>© 2026 Azande Hair & Beauty concept</p>
+</footer>
+
+<a class="floating" href="https://wa.me/27781636600?text=Hi%20Azande%20Hair%20%26%20Beauty%2C%20I%27d%20like%20to%20enquire%20about%20an%20appointment." target="_blank" rel="noopener">WhatsApp ↗</a>
+<div class="demo">UNOFFICIAL WEBSITE CONCEPT</div>
+</body>
+</html>
